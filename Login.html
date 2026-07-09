@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription | Lieu de Rassemblement</title>
+    <!-- Polices Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Icônes FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- VARIABLES CSS (Basées sur le site principal) --- */
+        :root {
+            --primary-color: #0f4c81; 
+            --primary-light: #1a64a5;
+            --secondary-color: #d4af37;
+            --secondary-hover: #b5952f;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: rgba(0, 0, 0, 0.3);
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* --- RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary-color);
+            background-image: linear-gradient(135deg, #0f4c81 0%, #0a3153 100%);
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* --- ANIMATIONS D'ARRIÈRE-PLAN (BLOBS) --- */
+        .background-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(60px);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--secondary-color);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: #1a64a5;
+            bottom: -150px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+        
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            background: rgba(212, 175, 55, 0.3);
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-duration: 15s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 50px) scale(1.1); }
+        }
+
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- CONTENEUR PRINCIPAL (GLASSMORPHISM) --- */
+        .login-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px var(--glass-shadow);
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .login-header i.logo-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+        }
+
+        .login-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-light);
+            font-size: 2rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .login-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* --- FORMULAIRE ET CHAMPS (LABELS FLOTTANTS) --- */
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 1rem;
+            color: var(--text-light);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group input:not(:placeholder-shown) {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group label {
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        /* Animation du label vers le haut */
+        .form-group input:focus ~ label,
+        .form-group input:not(:placeholder-shown) ~ label {
+            top: -10px;
+            left: 15px;
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            background: var(--primary-color);
+            padding: 0 8px;
+            border-radius: 4px;
+        }
+
+        .form-group i.input-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus ~ i.input-icon,
+        .form-group input:not(:placeholder-shown) ~ i.input-icon {
+            color: var(--secondary-color);
+        }
+
+        /* --- SÉLECTEUR PERSONNALISÉ (AMI / MEMBRE) --- */
+        .status-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .status-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .status-option input[type="radio"] {
+            display: none;
+        }
+
+        .status-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .status-label i {
+            font-size: 1.2rem;
+        }
+
+        .status-option input[type="radio"]:checked + .status-label {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--text-dark);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* --- BOUTON DE SOUMISSION --- */
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #e2c45e 100%);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Effet de brillance (Shine) sur le bouton */
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(30deg);
+            transition: all 0.6s ease;
+        }
+
+        .btn-submit:hover::after {
+            left: 120%;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+            .status-selector {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Formes abstraites animées en arrière-plan -->
+    <div class="background-shapes">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Conteneur principal du formulaire -->
+    <div class="login-container">
+        <div class="login-header">
+            <i class="fa-solid fa-hands-holding-circle logo-icon"></i>
+            <h1>Bienvenue</h1>
+            <p>Rejoignez le Lieu de Rassemblement</p>
+        </div>
+
+        <form action="#" method="POST">
+            
+            <!-- Nom et Prénom -->
+            <div class="form-group">
+                <input type="text" id="fullname" name="fullname" placeholder=" " required autocomplete="name">
+                <i class="fa-regular fa-user input-icon"></i>
+                <label for="fullname">Nom et Prénom</label>
+            </div>
+
+            <!-- Numéro de téléphone -->
+            <div class="form-group">
+                <input type="tel" id="phone" name="phone" placeholder=" " required autocomplete="tel">
+                <i class="fa-solid fa-phone input-icon"></i>
+                <label for="phone">Numéro de téléphone</label>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+                <i class="fa-regular fa-envelope input-icon"></i>
+                <label for="email">Adresse électronique</label>
+            </div>
+
+            <!-- Statut : Ami(e) ou Membre (Boutons Radio stylisés) -->
+            <div class="status-selector">
+                <label class="status-option">
+                    <input type="radio" name="statut" value="membre" checked>
+                    <div class="status-label">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Membre</span>
+                    </div>
+                </label>
+                
+                <label class="status-option">
+                    <input type="radio" name="statut" value="ami">
+                    <div class="status-label">
+                        <i class="fa-solid fa-handshake"></i>
+                        <span>Ami(e)</span>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Paroisse ou Branche -->
+            <div class="form-group">
+                <input type="text" id="ward" name="ward" placeholder=" " required>
+                <i class="fa-solid fa-church input-icon"></i>
+                <label for="ward">Paroisse ou Branche</label>
+            </div>
+
+            <!-- Bouton de validation -->
+            <button type="submit" class="btn-submit">
+                S'inscrire <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+            </button>
+
+        </form>
+
+        <!-- Lien de retour -->
+        <a href="text.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Retour à la page d'accueil
+        </a>
+    </div>
+
+</body>
+</html>
