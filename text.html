@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/hands-holding-circle.svg">
+    
+    <title>Lieu de Rassemblement | Pieu de Lomé Togo Agoè</title>
+    
+    <!-- Polices Google de Prestige pour un style académique et moderne -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+    
+    <!-- Icônes FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- VARIABLES CSS --- */
+        :root {
+            --primary-color: #0f4c81;     /* Bleu Royal Officiel du Pieu */
+            --primary-dark: #0a3153;      /* Bleu Nuit Profond */
+            --secondary-color: #d4af37;    /* Or Chaud de la Réussite */
+            --secondary-light: #f3e5ab;   /* Or Doux */
+            --text-dark: #1a1a1a;
+            --text-light: #fcfdfd;
+            --bg-light: #ffffff;
+            --bg-gray: #f8f9fa;
+            --transition-speed: 0.4s;
+            --gold-glow: 0 0 20px rgba(212, 175, 55, 0.25);
+        }
+
+        /* --- RESET ET STRUCTURE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-gray);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- EFFETS ET ANIMATIONS PUREMENT CSS --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        @keyframes floatEffect {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .gold-glow {
+            box-shadow: var(--gold-glow);
+        }
+
+        .gold-text-glow {
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- BARRE DE NAVIGATION (NAVBAR) --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(15, 76, 129, 0.1);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon-container {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(15, 76, 129, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+
+        .logo-text-sub {
+            font-size: 0.75rem;
+            display: block;
+            color: #666;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 5px 0;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-links li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width var(--transition-speed) ease;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        /* --- SECTION HERO (ACCUEIL) --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            /* Photo d'arrière-plan du header demandée */
+            background: linear-gradient(rgba(10, 49, 83, 0.88), rgba(0, 0, 0, 0.9)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 120px 20px 80px 20px;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            background-color: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            animation: fadeInDown 1s ease-out;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            max-width: 900px;
+            line-height: 1.2;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero h1 span {
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin-bottom: 40px;
+            color: #d1d5db;
+            font-weight: 300;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 45px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 15px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            min-width: 180px;
+            transition: border-color 0.3s;
+        }
+
+        .stat-item:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            line-height: 1.1;
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-text {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #9ca3af;
+            font-weight: 600;
+        }
+
+        .hero-btns {
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        /* --- BOUTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 16px 38px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all var(--transition-speed);
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            animation: pulseGlow 2s infinite;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-light);
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: translateY(-3px);
+        }
+
+        /* Vague de transition fluide en bas du Hero */
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            fill: var(--bg-gray);
+        }
+
+        /* --- SECTION A PROPOS --- */
+        .about {
+            padding: 100px 5%;
+            background-color: var(--bg-light);
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1.2;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .pillar-item {
+            background: var(--bg-gray);
+            padding: 25px;
+            border-radius: 16px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .pillar-item:hover {
+            transform: translateX(8px);
+            background: #fff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .pillar-item i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .pillar-item h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+
+        .pillar-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: #666;
+        }
+
+        .about-img {
+            flex: 0.8;
+            position: relative;
+        }
+
+        .about-img-frame {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Sceau de prestige sur l'image */
+        .image-seal {
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffd700 0%, #d4af37 60%, #aa7c11 100%);
+            box-shadow: inset 0 0 8px #7a5807, 0 8px 20px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+            animation: floatEffect 4s ease-in-out infinite;
+        }
+
+        .image-seal i {
+            font-size: 1.4rem;
+            margin-bottom: 2px;
+            color: white;
+        }
+
+        /* --- SECTION FORMATIONS --- */
+        .formations {
+            padding: 100px 5%;
+            background-color: var(--bg-gray);
+            text-align: center;
+        }
+
+        .formations .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .formations > p {
+            max-width: 800px;
+            margin: 20px auto 60px auto;
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .grid-formations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            height: 440px;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 49, 83, 0.98) 0%, rgba(15, 76, 129, 0.75) 55%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 35px;
+            text-align: left;
+            color: white;
+            transform: translateY(35%);
+            transition: transform 0.5s ease;
+        }
+
+        .card-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-desc {
+            opacity: 0;
+            transition: opacity 0.5s ease 0.1s;
+        }
+
+        .card-desc p {
+            font-size: 0.92rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #e5e7eb;
+            font-weight: 300;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.15);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .badge-gold {
+            background-color: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-light);
+        }
+
+        .card-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, transform 0.3s;
+            align-self: flex-start;
+        }
+
+        .card-btn:hover {
+            background-color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* HOVER SUR LES CARTES DE FORMATION */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(15, 76, 129, 0.15);
+        }
+
+        .card:hover .card-img-container img {
+            transform: scale(1.12);
+        }
+
+        .card:hover .card-content {
+            transform: translateY(0);
+            background: linear-gradient(to top, rgba(10, 49, 83, 0.98) 0%, rgba(15, 76, 129, 0.9) 75%, rgba(0,0,0,0.4) 100%);
+        }
+
+        .card:hover .card-desc {
+            opacity: 1;
+        }
+
+        /* --- SECTION DU CERTIFICAT INTERACTIF EN CSS PUR --- */
+        .cert-section {
+            padding: 100px 5%;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+
+        .cert-section .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cert-section > p {
+            max-width: 800px;
+            margin: 20px auto 50px auto;
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* STRUCTURE INTERACTIVE DE SÉLECTION EN PURE CSS */
+        .cert-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--bg-gray);
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.03), 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        /* Masquage des radios natifs */
+        input[name="cert-course-radio"] {
+            display: none;
+        }
+
+        .cert-selector-group {
+            margin-bottom: 40px;
+        }
+
+        .cert-selector-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .cert-selector-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .btn-select {
+            display: block;
+            background-color: var(--bg-light);
+            border: 2px solid rgba(15, 76, 129, 0.1);
+            color: var(--primary-color);
+            padding: 14px 20px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-select:hover {
+            border-color: var(--secondary-color);
+            background-color: rgba(212, 175, 55, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Changement d'état actif sans JS lors de la sélection du bouton radio associé */
+        #radio-coiffure:checked ~ .cert-selector-group label[for="radio-coiffure"],
+        #radio-tresse:checked ~ .cert-selector-group label[for="radio-tresse"],
+        #radio-couture:checked ~ .cert-selector-group label[for="radio-couture"],
+        #radio-web:checked ~ .cert-selector-group label[for="radio-web"],
+        #radio-cuisine:checked ~ .cert-selector-group label[for="radio-cuisine"],
+        #radio-ferraillage:checked ~ .cert-selector-group label[for="radio-ferraillage"] {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 15px rgba(15, 76, 129, 0.2);
+        }
+
+        /* RENDU VISUEL DIPLÔME DE PRESTIGE (HTML / CSS PUR) */
+        .diploma-frame {
+            background-color: #ffffff;
+            border: 12px double var(--secondary-color);
+            padding: 30px;
+            border-radius: 12px;
+            position: relative;
+            box-shadow: var(--gold-glow), 0 20px 50px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            max-width: 800px;
+            overflow: hidden;
+        }
+
+        /* Filigrane central d'arrière-plan */
+        .diploma-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24rem;
+            color: rgba(15, 76, 129, 0.02);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .diploma-content {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+            background-color: #fafaf7; /* Effet de vieux papier académique de prestige */
+        }
+
+        .diploma-header {
+            margin-bottom: 30px;
+        }
+
+        .diploma-church {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .diploma-stake {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .diploma-loc {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        .diploma-divider {
+            width: 120px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0 auto;
+        }
+
+        .diploma-body h3 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .diploma-text {
+            font-size: 0.95rem;
+            color: #4b5563;
+            max-width: 580px;
+            margin: 0 auto 20px auto;
+            line-height: 1.6;
+        }
+
+        /* AFFICHAGE CONDITIONNEL CSS DE LA FILIÈRE */
+        .diploma-course-name {
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            background-color: rgba(212, 175, 55, 0.12);
+            padding: 8px 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        /* Structure conditionnelle CSS pur */
+        .course-label {
+            display: none;
+        }
+
+        #radio-coiffure:checked ~ .diploma-frame .label-coiffure,
+        #radio-tresse:checked ~ .diploma-frame .label-tresse,
+        #radio-couture:checked ~ .diploma-frame .label-couture,
+        #radio-web:checked ~ .diploma-frame .label-web,
+        #radio-cuisine:checked ~ .diploma-frame .label-cuisine,
+        #radio-ferraillage:checked ~ .diploma-frame .label-ferraillage {
+            display: inline;
+        }
+
+        .diploma-recipient {
+            font-family: 'Alex Brush', cursive;
+            font-size: 3.2rem;
+            color: var(--secondary-color);
+            margin: 15px 0;
+            line-height: 1;
+            display: block;
+        }
+
+        .diploma-validation {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+            max-width: 520px;
+            margin: 15px auto 25px auto;
+        }
+
+        .diploma-badge-free {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 15px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+        }
+
+        /* Signature & Sceau officiel de cire d'or en CSS */
+        .diploma-footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .diploma-sig {
+            text-align: center;
+            width: 250px;
+        }
+
+        .sig-image {
+            font-family: 'Alex Brush', cursive;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            display: block;
+            margin-bottom: 5px;
+            user-select: none;
+        }
+
+        .sig-line {
+            width: 100%;
+            height: 1px;
+            background-color: #9ca3af;
+            margin-bottom: 8px;
+        }
+
+        .sig-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        /* SCEAU DE CIRE DORÉ ET RUBANS CSS */
+        .wax-seal-container {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wax-seal-ribbon-left {
+            width: 14px;
+            height: 45px;
+            background: #b22222;
+            position: absolute;
+            top: 40px;
+            left: 24px;
+            transform: rotate(15deg);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .wax-seal-ribbon-right {
+            width: 14px;
+            height: 45px;
+            background: #8b0000;
+            position: absolute;
+            top: 40px;
+            right: 24px;
+            transform: rotate(-15deg);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+            box-shadow: -2px 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .wax-seal {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffd700 0%, #d4af37 60%, #aa7c11 100%);
+            box-shadow: inset 0 0 8px #7a5807, 0 4px 10px rgba(0,0,0,0.25);
+            position: relative;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .wax-seal::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border: 2px dashed rgba(255,255,255,0.4);
+            border-radius: 50%;
+        }
+
+        /* --- SECTION POURQUOI NOUS REJOINDRE --- */
+        .pourquoi {
+            padding: 100px 5%;
+            background-color: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .subtitle {
+            display: block;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .valeur-card {
+            text-align: center;
+            padding: 35px 25px;
+            background-color: var(--bg-gray);
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: all var(--transition-speed);
+        }
+
+        .valeur-card:hover {
+            transform: translateY(-5px);
+            background-color: #fff;
+            box-shadow: 0 10px 30px rgba(15, 76, 129, 0.08);
+            border-color: var(--secondary-color);
+        }
+
+        .valeur-num {
+            font-size: 4rem;
+            font-weight: 300;
+            color: rgba(15, 76, 129, 0.12);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: -10px;
+            line-height: 1;
+        }
+
+        .valeur-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .valeur-card p {
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* --- SECTION TEMOIGNAGES --- */
+        .temoignages {
+            padding: 100px 5%;
+            background-color: var(--bg-gray);
+        }
+
+        .temoignage-desc {
+            text-align: center;
+            max-width: 800px;
+            margin: -40px auto 60px auto;
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .temoignage-card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: transform 0.3s;
+        }
+
+        .temoignage-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .quote-icon {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            color: var(--secondary-color);
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            opacity: 0.25;
+            line-height: 1;
+        }
+
+        .temoignage-card p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-size: 0.98rem;
+            font-weight: 300;
+        }
+
+        .temoignage-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 15px;
+        }
+
+        .author-avatar-placeholder {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(15, 76, 129, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .temoignage-author h4 {
+            color: var(--primary-dark);
+            font-size: 1.05rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .temoignage-author span {
+            color: #888;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: block;
+        }
+
+        .big-quote {
+            max-width: 900px;
+            margin: 60px auto 0 auto;
+            text-align: center;
+            padding: 45px;
+            background: white;
+            border-left: 6px solid var(--secondary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-radius: 0 24px 24px 0;
+        }
+
+        .big-quote p {
+            font-size: 1.4rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .big-quote span {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--secondary-color);
+        }
+
+        /* --- SECTION CONTACT & MAP LOCALISATION --- */
+        .contact-map-grid {
+            padding: 100px 5%;
+            background: var(--bg-light);
+        }
+
+        .contact-container-layout {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .contact-info-panel {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info-panel h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .contact-info-panel h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .contact-info-panel p {
+            color: #555;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .loc-details {
+            margin-bottom: 35px;
+        }
+
+        .loc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .loc-item i {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            background: rgba(15, 76, 129, 0.1);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .loc-item-text h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .loc-item-text p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .map-frame-wrapper {
+            flex: 1.2;
+            min-width: 320px;
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--gold-glow), 0 15px 35px rgba(15, 76, 129, 0.12);
+            border: 4px solid white;
+            height: 450px;
+            transition: transform var(--transition-speed);
+        }
+
+        .map-frame-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .map-frame-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BANNIÈRE REJOIGNEZ-NOUS (CTA) --- */
+        .cta-section {
+            background: linear-gradient(rgba(15, 76, 129, 0.9), rgba(10, 49, 83, 0.95)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+            font-size: 1.15rem;
+            color: #d1d5db;
+            font-weight: 300;
+        }
+
+        .cta-section .btn-outline {
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+            background-color: transparent;
+        }
+
+        .cta-section .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #051a2d;
+            color: #9ca3af;
+            padding: 80px 5% 30px 5%;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-col p {
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .footer-col i {
+            color: var(--secondary-color);
+            margin-top: 5px;
+        }
+
+        .footer-col ul li a {
+            transition: color 0.3s ease, padding-left 0.3s ease;
+            font-weight: 300;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 6px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #6b7280;
+            font-weight: 300;
+        }
+
+        .copyright p span {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* --- DESIGN RESPONSIVE EN CSS PUR --- */
+        @media (max-width: 992px) {
+            .about {
+                flex-direction: column;
+                gap: 50px;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .cert-selector-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-container-layout {
+                flex-direction: column;
+            }
+            .map-frame-wrapper {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 6%;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-out;
+                border-top: 1px solid rgba(255,255,255,0.08);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            #menu-toggle:checked ~ .nav-links {
+                max-height: 420px;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 18px;
+                color: white;
+                font-size: 0.85rem;
+            }
+
+            .nav-links li a::after {
+                display: none;
+            }
+
+            .pillars {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2.1rem;
+            }
+
+            .cert-selector-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .diploma-frame {
+                border-width: 8px;
+                padding: 15px;
+            }
+
+            .diploma-content {
+                padding: 25px 15px;
+            }
+
+            .diploma-stake {
+                font-size: 1.3rem;
+            }
+
+            .diploma-body h3 {
+                font-size: 1.8rem;
+            }
+
+            .diploma-recipient {
+                font-size: 2.4rem;
+            }
+
+            .diploma-footer {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU BURGER EN CSS PUR (Utilisation de la mécanique input check) -->
+    <header>
+        <a href="#" class="logo">
+            <div class="logo-icon-container">
+                <i class="fa-solid fa-hands-holding-circle"></i>
+            </div>
+            <div>
+                Pieu de Lomé Togo Agoè 
+                <span class="logo-text-sub">Lieu de Rassemblement</span>
+            </div>
+        </a>
+        
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        
+        <ul class="nav-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#a-propos">À Propos</a></li>
+            <li><a href="#formations">Nos Formations</a></li>
+            <li><a href="#certifications-info">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- SECTION ACCUEIL AVEC PHOTO EN BACKGROUND ET BADGE +6 FORMATIONS -->
+    <section id="accueil" class="hero">
+        <div class="hero-badge">
+            <i class="fa-solid fa-award"></i> Certification de fin d'étude incluse
+        </div>
+        <h1>Apprenez un métier d'avenir.<br><span class="gold-text-glow">Obtenez votre Diplôme.</span></h1>
+        <p>Bienvenue au Lieu de Rassemblement du Pieu d'Agoè. Une formation d'excellence pratique de 6 mois, un accompagnement professionnel qualifié et un diplôme d'aptitude reconnu, sans aucun frais.</p>
+        
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">+6</span>
+                <span class="stat-text">Formations de pointe</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">18-35</span>
+                <span class="stat-text">Ans - Tous Bienvenus</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">0 FCFA</span>
+                <span class="stat-text">Inscriptions Gratuites</span>
+            </div>
+        </div>
+
+        <div class="hero-btns">
+            <a href="#formations" class="btn btn-primary"><i class="fa-solid fa-graduation-cap"></i> Découvrir nos parcours</a>
+            <a href="#certifications-info" class="btn btn-outline"><i class="fa-solid fa-certificate"></i> Voir le Certificat</a>
+        </div>
+
+        <!-- Décoration de transition courbe en bas en SVG pur -->
+        <svg class="hero-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,120,1053.11,110.58,985.66,92.83Z"></path>
+        </svg>
+    </section>
+
+    <!-- SECTION À PROPOS -->
+    <section id="a-propos" class="about">
+        <div class="about-text">
+            <span class="logo-text-sub" style="color: var(--secondary-color);">Qu'est-ce que le Gathering Place ?</span>
+            <h2 class="section-title">Le Lieu de Rassemblement</h2>
+            <p>Le Lieu de Rassemblement (Gathering Place) est une initiative internationale inspirée pour soutenir l'autonomie des jeunes adultes (18-35 ans). Établi au Centre de Pieu d'Agoè, ce centre moderne rassemble éducation, encadrement professionnel et perfectionnement.</p>
+            <p>Notre but ultime est de vous accompagner à acquérir une <strong>autonomie temporelle et spirituelle</strong> pour prendre en main votre parcours professionnel au Togo.</p>
+            
+            <div class="pillars">
+                <div class="pillar-item">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>Diplôme Certifié</h3>
+                    <p>Une certification d'aptitude professionnelle validée en fin d'étude.</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>+6 Métiers d'Avenir</h3>
+                    <p>6 parcours de formation intensive ciblés sur le marché d'Agoè et de Lomé.</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <h3>Zéro Frais Caché</h3>
+                    <p>L'inscription, les cours d'atelier, l'examen et la délivrance du diplôme sont 100% gratuits.</p>
+                </div>
+                <div class="pillar-item">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>Fraternité & Soutien</h3>
+                    <p>Rejoignez une communauté de jeunes déterminés à réussir.</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-img">
+            <div class="about-img-frame">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Jeunes adultes collaborant">
+            </div>
+            <!-- Sceau d'authenticité CSS pur -->
+            <div class="image-seal">
+                <i class="fa-solid fa-hands-holding-circle"></i>
+                Pieu d'Agoè
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION FORMATIONS (+6 PARCOURS CERTIFIANTS ET GRATUITS) -->
+    <section id="formations" class="formations">
+        <span class="logo-text-sub" style="color: var(--secondary-color);">Construisez Votre Réussite</span>
+        <h2 class="section-title">6 Parcours de Formation d'Avenir</h2>
+        <p>Chaque spécialité est validée par 6 mois d'ateliers intenses d'apprentissage pratique, suivis d'un examen d'aptitude. À la clé, l'obtention de votre diplôme certifié entièrement gratuit.</p>
+
+        <div class="grid-formations">
+            
+            <!-- COIFFURE MODERNE -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Coupe homme Waves.jpg" alt="Formation Coiffure Moderne">
+                </div>
+                <div class="card-content">
+                    <h3>Coiffure Moderne</h3>
+                    <div class="card-desc">
+                        <p>Apprenez la coupe artistique pour hommes et femmes, la décoloration, les techniques de shampoings traitants et de lissage.</p>
+                        <div class="badge-container">
+                            <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
+                            <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
+                        </div>
+                        <a href="#contact" class="card-btn">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRESSAGE PROFESSIONNEL -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Tresse.jpg" alt="Tressage professionnel">
+                </div>
+                <div class="card-content">
+                    <h3>Tressage Pro</h3>
+                    <div class="card-desc">
+                        <p>Maîtrisez les nattes stylisées, tresses africaines complexes, coiffures d'apparat traditionnelles et la pose d'extensions.</p>
+                        <div class="badge-container">
+                            <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
+                            <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
+                        </div>
+                        <a href="#contact" class="card-btn">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HAUTE COUTURE -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Couture.jpg" alt="Stylisme et haute couture">
+                </div>
+                <div class="card-content">
+                    <h3>Haute Couture</h3>
+                    <div class="card-desc">
+                        <p>Devenez modéliste : découpe de patrons, couture sur machine à coudre moderne, assemblage de broderies complexes et confection.</p>
+                        <div class="badge-container">
+                            <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
+                            <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
+                        </div>
+                        <a href="#contact" class="card-btn">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DÉVELOPPEMENT WEB -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Just compute it_ 2025.jpg" alt="Développement Web">
+                </div>
+                <div class="card-content">
+                    <h3>Développement Web</h3>
+                    <div class="card-desc">
+                        <p>Concevez et déployez des sites internet interactifs. Apprenez le HTML, le CSS, le JavaScript et l'administration de CMS.</p>
+                        <div class="badge-container">
+                            <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
+                            <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
+                        </div>
+                        <a href="#contact" class="card-btn">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CUISINE & PÂTISSERIE -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Cuisine.jpg" alt="Cuisine et Pâtisserie">
+                </div>
+                <div class="card-content">
+                    <h3>Cuisine & Pâtisserie</h3>
+                    <div class="card-desc">
+                        <p>Ateliers de cuisine de prestige et de boulangerie-pâtisserie fine : gâteaux événementiels et plats d'affaires.</p>
+                        <div class="badge-container">
+                            <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
+                            <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
+                        </div>
+                        <a href="#contact" class="card-btn">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FERRAILLAGE DE CHANTIER -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Ferraillage.jpg" alt="Ferraillage de Chantier">
+                </div>
+                <div class="card-content">
+                    <h3>Ferraillage</h3>
+                    <div class="card-desc">
+                        <p>Formation technique professionnelle en Ferraillage : découpe et liaison d'armatures métalliques.</p>
+                        <div class="badge-container">
+                            <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
+                            <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
+                        </div>
+                        <a href="#contact" class="card-btn">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION CERTIFICAT INTERACTIF -->
+    <section id="certifications-info" class="cert-section">
+        <span class="logo-text-sub" style="color: var(--secondary-color);">Preuve d'Excellence</span>
+        <h2 class="section-title">Votre Certificat de Compétences</h2>
+        <p>Afin de valoriser vos efforts, un diplôme officiel d'aptitude vous sera délivré lors de la réussite de votre évaluation finale. Cliquez sur les filières ci-dessous pour prévisualiser votre certificat en temps réel !</p>
+
+        <div class="cert-container">
+            
+            <!-- Boutons radios cachés qui gèrent l'état d'affichage purement en CSS -->
+            <input type="radio" id="radio-coiffure" name="cert-course-radio" checked>
+            <input type="radio" id="radio-tresse" name="cert-course-radio">
+            <input type="radio" id="radio-couture" name="cert-course-radio">
+            <input type="radio" id="radio-web" name="cert-course-radio">
+            <input type="radio" id="radio-cuisine" name="cert-course-radio">
+            <input type="radio" id="radio-ferraillage" name="cert-course-radio">
+
+            <!-- Sélecteurs stylisés de filière -->
+            <div class="cert-selector-group">
+                <span class="cert-selector-label">Parcours Certifié à Afficher sur le diplôme :</span>
+                <div class="cert-selector-buttons">
+                    <label for="radio-coiffure" class="btn-select">Coiffure Moderne</label>
+                    <label for="radio-tresse" class="btn-select">Tressage Professionnel</label>
+                    <label for="radio-couture" class="btn-select">Haute Couture</label>
+                    <label for="radio-web" class="btn-select">Développement Web</label>
+                    <label for="radio-cuisine" class="btn-select">Cuisine & Pâtisserie</label>
+                    <label for="radio-ferraillage" class="btn-select">Ferraillage</label>
+                </div>
+            </div>
+
+            <!-- CADRE DU CERTIFICAT ACADÉMIQUE DE HAUTE QUALITÉ -->
+            <div class="diploma-frame">
+                
+                <!-- Filigrane d'icône centrale pour le prestige -->
+                <div class="diploma-watermark">
+                    <i class="fa-solid fa-hands-holding-circle"></i>
+                </div>
+
+                <div class="diploma-content">
+                    
+                    <div class="diploma-header">
+                        <span class="diploma-church">L'Église de Jésus-Christ des Saints des Derniers Jours</span>
+                        <h3 class="diploma-stake">Pieu de Lomé Togo Agoè</h3>
+                        <span class="diploma-loc">Lieu de Rassemblement • Gathering Place</span>
+                        <div class="diploma-divider"></div>
+                    </div>
+
+                    <div class="diploma-body">
+                        <h3>Certificat d'Aptitude</h3>
+                        <p class="diploma-text">Décerné d'office et à titre entièrement gracieux pour attester de la validation académique et pratique rigoureuse du cursus professionnel de 6 mois en :</p>
+                        
+                        <div class="diploma-course-name">
+                            <span class="course-label label-coiffure">Coiffure Moderne</span>
+                            <span class="course-label label-tresse">Tressage Professionnel</span>
+                            <span class="course-label label-couture">Haute Couture</span>
+                            <span class="course-label label-web">Développement Web</span>
+                            <span class="course-label label-cuisine">Cuisine & Pâtisserie</span>
+                            <span class="course-label label-ferraillage">Ferraillage de Chantier</span>
+                        </div>
+
+                        <span class="diploma-recipient">Nom du Candidat</span>
+                        
+                        <p class="diploma-validation">En reconnaissance de son assiduité, de sa réussite aux évaluations et examens techniques de fin de cycle, et de son engagement personnel pour l'autonomie.</p>
+                        
+                        <span class="diploma-badge-free">Sceau d'Honneur • Certificat Officiel d'Aptitude</span>
+                    </div>
+
+                    <div class="diploma-footer">
+                        
+                        <!-- Informations de validation à gauche -->
+                        <div class="diploma-sig" style="text-align: left; width: 180px;">
+                            <span class="sig-title" style="margin-bottom: 5px;">Réf : GP-AGOE-2026</span>
+                            <span class="sig-title" style="margin-bottom: 5px;">Statut : Homologué</span>
+                        </div>
+
+                        <!-- Sceau de cire officiel de l'Église fait en CSS pur -->
+                        <div class="wax-seal-container">
+                            <div class="wax-seal-ribbon-left"></div>
+                            <div class="wax-seal-ribbon-right"></div>
+                            <div class="wax-seal">
+                                <i class="fa-solid fa-hands-holding-circle"></i>
+                            </div>
+                        </div>
+
+                        <!-- Signature unique demandée du Président de Pieu -->
+                        <div class="diploma-sig">
+                            <span class="sig-image">Améhouénou Komlan Emmanuel</span>
+                            <div class="sig-line"></div>
+                            <span class="sig-title">Président du Pieu de Lomé Togo Agoè</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION VALEURS -->
+    <section class="pourquoi">
+        <div class="section-header">
+            <span class="subtitle">Valeurs Sacrées</span>
+            <h2 class="section-title">Pourquoi Nous Rejoindre ?</h2>
+        </div>
+        
+        <div class="grid-3">
+            <div class="valeur-card">
+                <div class="valeur-num">01</div>
+                <h3>Autonomie Pratique</h3>
+                <p>Acquérir un véritable savoir-faire manuel ou technologique pour lancer votre propre activité ou intégrer un emploi décent à Lomé.</p>
+            </div>
+            <div class="valeur-card">
+                <div class="valeur-num">02</div>
+                <h3>Gratuité Totale</h3>
+                <p>Du matériel de formation aux ateliers, jusqu'au diplôme final, l'Église prend l'intégralité des coûts à sa charge pour vous soutenir.</p>
+            </div>
+            <div class="valeur-card">
+                <div class="valeur-num">03</div>
+                <h3>L'Alliance Sacrée</h3>
+                <p>Développer de fortes qualités spirituelles et éthiques dans un climat de bienveillance fraternelle et d'entraide mutuelle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TEMOIGNAGES -->
+    <section class="temoignages">
+        <div class="section-header">
+            <span class="subtitle">Des Vies Changées</span>
+            <h2 class="section-title">Ils Ont Réussi Grâce Au Lieu de Rassemblement</h2>
+        </div>
+        <p class="temoignage-desc">Témoignages réels de jeunes adultes du Pieu de Lomé Agoè dont le parcours vers l'autonomie a été transformé.</p>
+        
+        <div class="grid-3">
+            <div class="temoignage-card">
+                <span class="quote-icon">"</span>
+                <p>Le certificat de coiffure m'a permis de travailler en salon dès ma sortie. L'apprentissage est direct et concret.</p>
+                <div class="temoignage-author">
+                    <div class="author-avatar-placeholder">KA</div>
+                    <div>
+                        <h4>Kofi A.</h4>
+                        <span>Coiffure Moderne - 22 ans</span>
+                    </div>
+                </div>
+            </div>
+            <div class="temoignage-card">
+                <span class="quote-icon">"</span>
+                <p>Grâce au tressage professionnel, j'ai ouvert un atelier à domicile. Je gère mes finances de manière autonome.</p>
+                <div class="temoignage-author">
+                    <div class="author-avatar-placeholder">AM</div>
+                    <div>
+                        <h4>Akosua M.</h4>
+                        <span>Tressage Pro - 25 ans</span>
+                    </div>
+                </div>
+            </div>
+            <div class="temoignage-card">
+                <span class="quote-icon">"</span>
+                <p>La pâtisserie a changé ma vie. Je vends des gâteaux pour les mariages de la paroisse et les environs.</p>
+                <div class="temoignage-author">
+                    <div class="author-avatar-placeholder">EK</div>
+                    <div>
+                        <h4>Enyonam K.</h4>
+                        <span>Pâtisserie - 28 ans</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="big-quote">
+            <p>« Ce n'est pas simplement un cours technique. C'est un endroit béni où l'on grandit professionnellement et spirituellement. »</p>
+            <span>— Un Diplômé du Lieu de Rassemblement d'Agoè</span>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT ET CARTOGRAPHIE GOOGLE MAPS -->
+    <section id="contact" class="contact-map-grid">
+        <div class="contact-container-layout">
+            
+            <!-- Colonne Informations de Contact -->
+            <div class="contact-info-panel">
+                <span class="logo-text-sub" style="color: var(--secondary-color);">Nous Rejoindre</span>
+                <h2>Où nous trouver ?</h2>
+                <p>Le Lieu de Rassemblement est à votre écoute pour vous orienter et vous accompagner. Retrouvez-nous directement à notre adresse principale à Kégué ou contactez l'administration.</p>
+                
+                <div class="loc-details">
+                    <div class="loc-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="loc-item-text">
+                            <h4>Notre Adresse</h4>
+                            <p>Rue 337 Kégué, Lomé, Togo</p>
+                            <p style="font-size: 0.85rem; color: #888; font-style: italic;">En face de la boulangerie <strong>Boul icon</strong>, non loin du grand marché de Kégué.</p>
+                        </div>
+                    </div>
+                    <div class="loc-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="loc-item-text">
+                            <h4>Courriel Administratif</h4>
+                            <p>agoe.rassemblement@eglisedejesuschrist.org</p>
+                        </div>
+                    </div>
+                    <div class="loc-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="loc-item-text">
+                            <h4>Téléphone de l'Administration</h4>
+                            <p>+228 90 00 00 00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="mailto:agoe.rassemblement@eglisedejesuschrist.org?subject=Inscription%20Gathering%20Place%20Agoe" class="btn btn-primary" style="padding: 12px 25px; font-size: 0.85rem;"><i class="fa-solid fa-envelope"></i> Écrire un Avis</a>
+                    <a href="tel:+22890000000" class="btn btn-primary" style="padding: 12px 25px; font-size: 0.85rem; background-color: var(--primary-color); border-color: var(--primary-color); color: white;"><i class="fa-solid fa-phone"></i> Nous Appeler</a>
+                </div>
+            </div>
+
+            <!-- Colonne Google Maps Iframe -->
+            <div class="map-frame-wrapper">
+                <!-- Intégration de la carte Google Maps pointant sur la rue 337 Kégué, en face de Boul icon -->
+                <iframe 
+                    src="https://maps.google.com/maps?q=Rue%20337%20K%C3%A9gu%C3%A9%20Lom%C3%A9%20Togo%20Boulicon&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION APPEL À L'ACTION -->
+    <section class="cta-section">
+        <h2>Prêt à changer de destin ?</h2>
+        <p>Les places pour la prochaine promotion de 6 mois au Centre de Pieu d'Agoè sont limitées. Rejoignez-nous dès maintenant et assurez votre place gratuitement.</p>
+        <a href="Login.html" class="btn btn-primary">S'inscrire Maintenant </a>
+    </section>
+
+    <!-- PIED DE PAGE AVEC COORDONNÉES ET LIENS OFFICIELS -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Lieu de Rassemblement</h4>
+                <p>Une œuvre d'autonomie inspirée de l'Église de Jésus-Christ des Saints des Derniers Jours pour former, inspirer et élever la jeunesse d'Afrique de l'Ouest vers la réussite temporelle et spirituelle.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Nous Contacter</h4>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> Rue 337 Kégué, en face de Boul icon, Lomé, Togo</li>
+                    <li><i class="fa-solid fa-phone"></i> +228 90 00 00 00 / +228 22 00 00 00</li>
+                    <li><i class="fa-solid fa-envelope"></i> agoe.rassemblement@eglisedejesuschrist.org</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Liens Utiles</h4>
+                <ul>
+                    <li><a href="#accueil"><i class="fa-solid fa-angle-right"></i> Accueil du Portail</a></li>
+                    <li><a href="#a-propos"><i class="fa-solid fa-angle-right"></i> À Propos du Programme</a></li>
+                    <li><a href="#formations"><i class="fa-solid fa-angle-right"></i> Nos 6 Formations</a></li>
+                    <li><a href="https://afriquedelouest.eglisedejesus-christ.org/gathering-place-initiative?lang=fra-afw" target="_blank"><i class="fa-solid fa-angle-right"></i> Site Global de l'Église</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 Pieu de Lomé Togo Agoè. Tous droits réservés. Diplômes d'aptitude délivrés gratuitement.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
