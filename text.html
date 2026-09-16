@@ -3,24 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/hands-holding-circle.svg">
-    
     <title>Lieu de Rassemblement | Pieu de Lomé Togo Agoè</title>
-    
-    <!-- Polices Google de Prestige pour un style académique et moderne -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
-    
-    <!-- Icônes FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- VARIABLES CSS --- */
+        /*  VARIABLES CSS  */
         :root {
-            --primary-color: #0f4c81;     /* Bleu Royal Officiel du Pieu */
-            --primary-dark: #0a3153;      /* Bleu Nuit Profond */
-            --secondary-color: #d4af37;    /* Or Chaud de la Réussite */
-            --secondary-light: #f3e5ab;   /* Or Doux */
+            --primary-color: #0f4c81;    
+            --primary-dark: #0a3153;      
+            --secondary-color: #d4af37;   
+            --secondary-light: #f3e5ab;  
             --text-dark: #1a1a1a;
             --text-light: #fcfdfd;
             --bg-light: #ffffff;
@@ -29,7 +23,7 @@
             --gold-glow: 0 0 20px rgba(212, 175, 55, 0.25);
         }
 
-        /* --- RESET ET STRUCTURE --- */
+        /* STRUCTURE */
         * {
             margin: 0;
             padding: 0;
@@ -62,7 +56,7 @@
             list-style: none;
         }
 
-        /* --- EFFETS ET ANIMATIONS PUREMENT CSS --- */
+        /* EFFETS ET ANIMATIONS */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -92,7 +86,7 @@
             text-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
         }
 
-        /* --- BARRE DE NAVIGATION (NAVBAR) --- */
+        /* NAVBAR */
         header {
             position: fixed;
             top: 0;
@@ -189,11 +183,10 @@
             width: 100%;
         }
 
-        /* --- SECTION HERO (ACCUEIL) --- */
+        /* ACCUEIL */
         .hero {
             position: relative;
             min-height: 100vh;
-            /* Photo d'arrière-plan du header demandée */
             background: linear-gradient(rgba(10, 49, 83, 0.88), rgba(0, 0, 0, 0.9)), 
                         url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             display: flex;
@@ -293,7 +286,7 @@
             animation: fadeInUp 1s ease-out 0.7s both;
         }
 
-        /* --- BOUTONS --- */
+        /* BOUTONS */
         .btn {
             display: inline-block;
             padding: 16px 38px;
@@ -336,7 +329,6 @@
             transform: translateY(-3px);
         }
 
-        /* Vague de transition fluide en bas du Hero */
         .hero-wave {
             position: absolute;
             bottom: 0;
@@ -346,7 +338,7 @@
             fill: var(--bg-gray);
         }
 
-        /* --- SECTION A PROPOS --- */
+        /* SECTION A PROPOS */
         .about {
             padding: 100px 5%;
             background-color: var(--bg-light);
@@ -451,7 +443,6 @@
             transform: scale(1.05);
         }
 
-        /* Sceau de prestige sur l'image */
         .image-seal {
             position: absolute;
             top: -25px;
@@ -481,7 +472,7 @@
             color: white;
         }
 
-        /* --- SECTION FORMATIONS --- */
+        /* SECTION FORMATIONS */
         .formations {
             padding: 100px 5%;
             background-color: var(--bg-gray);
@@ -513,7 +504,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             position: relative;
-            height: 440px;
+            height: 460px;
             border: 1px solid rgba(0,0,0,0.03);
             transition: transform 0.4s, box-shadow 0.4s;
         }
@@ -542,7 +533,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 35px;
+            padding: 30px;
             text-align: left;
             color: white;
             transform: translateY(35%);
@@ -551,7 +542,7 @@
 
         .card-content h3 {
             color: var(--secondary-color);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             margin-bottom: 12px;
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
@@ -565,9 +556,9 @@
         }
 
         .card-desc p {
-            font-size: 0.92rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
             color: #e5e7eb;
             font-weight: 300;
         }
@@ -575,8 +566,8 @@
         .badge-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 15px;
         }
 
         .badge {
@@ -584,9 +575,9 @@
             align-items: center;
             gap: 6px;
             background: rgba(255,255,255,0.15);
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 30px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             backdrop-filter: blur(5px);
             color: white;
@@ -599,19 +590,28 @@
             color: var(--secondary-light);
         }
 
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
         .card-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             background-color: var(--secondary-color);
             color: var(--text-dark);
             text-align: center;
-            padding: 12px 24px;
+            padding: 10px 18px;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: background-color 0.3s, transform 0.3s;
-            align-self: flex-start;
+            border: none;
+            cursor: pointer;
         }
 
         .card-btn:hover {
@@ -619,7 +619,18 @@
             transform: translateY(-2px);
         }
 
-        /* HOVER SUR LES CARTES DE FORMATION */
+        .card-btn-cert {
+            background-color: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .card-btn-cert:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(15, 76, 129, 0.15);
@@ -638,7 +649,7 @@
             opacity: 1;
         }
 
-        /* --- SECTION DU CERTIFICAT INTERACTIF EN CSS PUR --- */
+        /* SECTION CERTIFICAT */
         .cert-section {
             padding: 100px 5%;
             background-color: var(--bg-light);
@@ -652,84 +663,211 @@
 
         .cert-section > p {
             max-width: 800px;
-            margin: 20px auto 50px auto;
+            margin: 20px auto 40px auto;
             color: #666;
             font-size: 1.1rem;
             font-weight: 300;
         }
 
-        /* STRUCTURE INTERACTIVE DE SÉLECTION EN PURE CSS */
-        .cert-container {
-            max-width: 1000px;
+        .cert-selector-group {
+            max-width: 900px;
             margin: 0 auto;
             background-color: var(--bg-gray);
-            border-radius: 32px;
-            padding: 40px;
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.03), 0 10px 30px rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.03);
-        }
-
-        /* Masquage des radios natifs */
-        input[name="cert-course-radio"] {
-            display: none;
-        }
-
-        .cert-selector-group {
-            margin-bottom: 40px;
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
         .cert-selector-label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: var(--primary-color);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .cert-selector-buttons {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            max-width: 850px;
-            margin: 0 auto;
         }
 
-        .btn-select {
-            display: block;
+        .btn-select-course {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             background-color: var(--bg-light);
-            border: 2px solid rgba(15, 76, 129, 0.1);
+            border: 2px solid rgba(15, 76, 129, 0.15);
             color: var(--primary-color);
-            padding: 14px 20px;
+            padding: 16px 20px;
             border-radius: 16px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
         }
 
-        .btn-select:hover {
+        .btn-select-course:hover {
             border-color: var(--secondary-color);
-            background-color: rgba(212, 175, 55, 0.05);
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(15, 76, 129, 0.2);
+        }
+
+        /* MODALE DU CERTIFICAT INTERACTIF */
+        .cert-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 26, 45, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .cert-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cert-modal-container {
+            background: white;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 920px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.85);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            border: 2px solid var(--secondary-color);
+            padding: 30px;
+        }
+
+        .cert-modal-overlay.active .cert-modal-container {
+            transform: scale(1);
+        }
+
+        /* Barre d'outils de la modale */
+        .cert-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .cert-modal-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cert-modal-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-modal-close {
+            background-color: #f3f4f6;
+            color: #4b5563;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-modal-close:hover {
+            background-color: #e5e7eb;
+            color: #111827;
+        }
+
+        .btn-modal-print {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-modal-print:hover {
+            background-color: #c29f2e;
             transform: translateY(-2px);
         }
 
-        /* Changement d'état actif sans JS lors de la sélection du bouton radio associé */
-        #radio-coiffure:checked ~ .cert-selector-group label[for="radio-coiffure"],
-        #radio-tresse:checked ~ .cert-selector-group label[for="radio-tresse"],
-        #radio-couture:checked ~ .cert-selector-group label[for="radio-couture"],
-        #radio-web:checked ~ .cert-selector-group label[for="radio-web"],
-        #radio-cuisine:checked ~ .cert-selector-group label[for="radio-cuisine"],
-        #radio-ferraillage:checked ~ .cert-selector-group label[for="radio-ferraillage"] {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            box-shadow: 0 4px 15px rgba(15, 76, 129, 0.2);
+        /* Champ de saisie du Nom */
+        .cert-input-box {
+            background-color: var(--bg-gray);
+            border-radius: 16px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid #e5e7eb;
         }
 
-        /* RENDU VISUEL DIPLÔME DE PRESTIGE (HTML / CSS PUR) */
+        .cert-input-box label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .cert-input-box input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 2px solid #d1d5db;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .cert-input-box input:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* CERTIFICAT VISUEL RÉEL DANS LA MODALE */
         .diploma-frame {
             background-color: #ffffff;
             border: 12px double var(--secondary-color);
@@ -740,9 +878,9 @@
             margin: 0 auto;
             max-width: 800px;
             overflow: hidden;
+            text-align: center;
         }
 
-        /* Filigrane central d'arrière-plan */
         .diploma-watermark {
             position: absolute;
             top: 50%;
@@ -760,11 +898,11 @@
             padding: 40px 20px;
             position: relative;
             z-index: 2;
-            background-color: #fafaf7; /* Effet de vieux papier académique de prestige */
+            background-color: #fafaf7;
         }
 
         .diploma-header {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .diploma-church {
@@ -803,7 +941,7 @@
         }
 
         .diploma-body h3 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             color: var(--primary-color);
@@ -820,7 +958,6 @@
             line-height: 1.6;
         }
 
-        /* AFFICHAGE CONDITIONNEL CSS DE LA FILIÈRE */
         .diploma-course-name {
             display: inline-block;
             font-family: 'Poppins', sans-serif;
@@ -836,27 +973,15 @@
             margin-bottom: 25px;
         }
 
-        /* Structure conditionnelle CSS pur */
-        .course-label {
-            display: none;
-        }
-
-        #radio-coiffure:checked ~ .diploma-frame .label-coiffure,
-        #radio-tresse:checked ~ .diploma-frame .label-tresse,
-        #radio-couture:checked ~ .diploma-frame .label-couture,
-        #radio-web:checked ~ .diploma-frame .label-web,
-        #radio-cuisine:checked ~ .diploma-frame .label-cuisine,
-        #radio-ferraillage:checked ~ .diploma-frame .label-ferraillage {
-            display: inline;
-        }
-
         .diploma-recipient {
             font-family: 'Alex Brush', cursive;
-            font-size: 3.2rem;
+            font-size: clamp(1.8rem, 6vw, 3.2rem);
             color: var(--secondary-color);
             margin: 15px 0;
-            line-height: 1;
+            line-height: 1.2;
             display: block;
+            min-height: 50px;
+            word-break: break-word;
         }
 
         .diploma-validation {
@@ -877,10 +1002,9 @@
             border-radius: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
-        /* Signature & Sceau officiel de cire d'or en CSS */
         .diploma-footer {
             display: flex;
             justify-content: space-around;
@@ -920,7 +1044,6 @@
             display: block;
         }
 
-        /* SCEAU DE CIRE DORÉ ET RUBANS CSS */
         .wax-seal-container {
             position: relative;
             width: 90px;
@@ -939,7 +1062,6 @@
             left: 24px;
             transform: rotate(15deg);
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
         }
 
         .wax-seal-ribbon-right {
@@ -951,7 +1073,6 @@
             right: 24px;
             transform: rotate(-15deg);
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
-            box-shadow: -2px 2px 5px rgba(0,0,0,0.15);
         }
 
         .wax-seal {
@@ -977,7 +1098,7 @@
             border-radius: 50%;
         }
 
-        /* --- SECTION POURQUOI NOUS REJOINDRE --- */
+        /* SECTION POURQUOI NOUS REJOINDRE */
         .pourquoi {
             padding: 100px 5%;
             background-color: var(--bg-light);
@@ -1050,7 +1171,7 @@
             font-weight: 300;
         }
 
-        /* --- SECTION TEMOIGNAGES --- */
+        /* SECTION TEMOIGNAGES */
         .temoignages {
             padding: 100px 5%;
             background-color: var(--bg-gray);
@@ -1164,7 +1285,7 @@
             color: var(--secondary-color);
         }
 
-        /* --- SECTION CONTACT & MAP LOCALISATION --- */
+        /* SECTION CONTACT ET LOCALISATION */
         .contact-map-grid {
             padding: 100px 5%;
             background: var(--bg-light);
@@ -1272,7 +1393,7 @@
             border: 0;
         }
 
-        /* --- BANNIÈRE REJOIGNEZ-NOUS (CTA) --- */
+        /* REJOIGNEZ-NOUS */
         .cta-section {
             background: linear-gradient(rgba(15, 76, 129, 0.9), rgba(10, 49, 83, 0.95)), 
                         url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
@@ -1294,18 +1415,6 @@
             font-size: 1.15rem;
             color: #d1d5db;
             font-weight: 300;
-        }
-
-        .cta-section .btn-outline {
-            border-color: var(--secondary-color);
-            color: var(--secondary-color);
-            background-color: transparent;
-        }
-
-        .cta-section .btn-outline:hover {
-            background-color: var(--secondary-color);
-            color: var(--text-dark);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
 
         /* --- FOOTER --- */
@@ -1385,12 +1494,69 @@
             font-weight: 300;
         }
 
-        .copyright p span {
-            color: var(--secondary-color);
-            font-weight: 600;
+        /* IMPRESSION CERTIFICAT */
+        @page {
+            size: landscape A4;
+            margin: 0;
         }
 
-        /* --- DESIGN RESPONSIVE EN CSS PUR --- */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body * {
+                visibility: hidden !important;
+            }
+            .cert-modal-overlay, .cert-modal-overlay * {
+                visibility: visible !important;
+            }
+            .cert-modal-overlay {
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+                background: white !important;
+                backdrop-filter: none !important;
+                padding: 10mm !important;
+                margin: 0 !important;
+                overflow: visible !important;
+                display: block !important;
+            }
+            .cert-modal-container {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 auto !important;
+                max-width: 100% !important;
+                max-height: none !important;
+                transform: none !important;
+                background: transparent !important;
+            }
+            .cert-modal-header, .cert-input-box {
+                display: none !important;
+            }
+            .diploma-frame {
+                box-shadow: none !important;
+                border: 8px double var(--secondary-color) !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                page-break-inside: avoid !important;
+                background-color: #ffffff !important;
+            }
+            .diploma-content {
+                background-color: #fafaf7 !important;
+            }
+        }
+
+        /* DESIGN RESPONSIVE */
         @media (max-width: 992px) {
             .about {
                 flex-direction: column;
@@ -1412,7 +1578,11 @@
 
         @media (max-width: 768px) {
             header {
-                padding: 15px 6%;
+                padding: 12px 5%;
+            }
+
+            .logo {
+                font-size: 0.95rem;
             }
 
             .menu-icon {
@@ -1447,7 +1617,7 @@
 
             .nav-links li a {
                 display: block;
-                padding: 18px;
+                padding: 16px;
                 color: white;
                 font-size: 0.85rem;
             }
@@ -1460,54 +1630,121 @@
                 grid-template-columns: 1fr;
             }
             
+            .hero {
+                padding: 110px 15px 70px 15px;
+            }
+
             .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                gap: 15px;
+            }
+
+            .stat-item {
+                min-width: 130px;
+                padding: 12px 18px;
+            }
+
+            .stat-number {
                 font-size: 2.2rem;
             }
 
             .section-title {
-                font-size: 2.1rem;
+                font-size: 2rem;
             }
 
             .cert-selector-buttons {
                 grid-template-columns: 1fr;
             }
 
-            .diploma-frame {
-                border-width: 8px;
+            .cert-modal-container {
                 padding: 15px;
+                border-radius: 16px;
+                max-height: 95vh;
+            }
+
+            .diploma-frame {
+                border-width: 6px;
+                padding: 12px;
             }
 
             .diploma-content {
-                padding: 25px 15px;
+                padding: 20px 10px;
             }
 
             .diploma-stake {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             .diploma-body h3 {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
 
-            .diploma-recipient {
-                font-size: 2.4rem;
+            .diploma-course-name {
+                font-size: 1rem;
+                padding: 6px 15px;
             }
 
             .diploma-footer {
-                flex-direction: column;
-                gap: 30px;
+                flex-direction: column-reverse;
+                gap: 20px;
             }
 
-            .btn-outline {
+            .diploma-sig {
+                width: 100% !important;
+                text-align: center !important;
+            }
+
+            .cert-input-box {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+            }
+
+            .btn {
+                width: 100%;
                 margin-left: 0;
-                margin-top: 15px;
+                margin-bottom: 10px;
+                padding: 14px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .stat-item {
+                width: 100%;
+            }
+
+            .sig-image {
+                font-size: 1.8rem;
+            }
+
+            .cert-modal-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .btn-modal-print, .btn-modal-close {
+                flex: 1;
+                justify-content: center;
+                padding: 10px 12px;
+                font-size: 0.75rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENU BURGER EN CSS PUR (Utilisation de la mécanique input check) -->
+    <! BARRE DE NAVIGATION >
     <header>
         <a href="#" class="logo">
             <div class="logo-icon-container">
@@ -1533,13 +1770,13 @@
         </ul>
     </header>
 
-    <!-- SECTION ACCUEIL AVEC PHOTO EN BACKGROUND ET BADGE +6 FORMATIONS -->
+    <! SECTION ACCUEIL >
     <section id="accueil" class="hero">
         <div class="hero-badge">
             <i class="fa-solid fa-award"></i> Certification de fin d'étude incluse
         </div>
-        <h1>Apprenez un métier d'avenir.<br><span class="gold-text-glow">Obtenez votre Diplôme.</span></h1>
-        <p>Bienvenue au Lieu de Rassemblement du Pieu d'Agoè. Une formation d'excellence pratique de 6 mois, un accompagnement professionnel qualifié et un diplôme d'aptitude reconnu, sans aucun frais.</p>
+        <h1>Apprenez un métier d'avenir.<br><span class="gold-text-glow">Obtenez votre Certificat.</span></h1>
+        <p>Bienvenue au Lieu de Rassemblement du Pieu d'Agoè. Une formation d'excellence pratique de 6 mois, un accompagnement professionnel qualifié et un certificat d'aptitude offert, sans aucun frais.</p>
         
         <div class="hero-stats">
             <div class="stat-item">
@@ -1558,16 +1795,15 @@
 
         <div class="hero-btns">
             <a href="#formations" class="btn btn-primary"><i class="fa-solid fa-graduation-cap"></i> Découvrir nos parcours</a>
-            <a href="#certifications-info" class="btn btn-outline"><i class="fa-solid fa-certificate"></i> Voir le Certificat</a>
+            <a href="#certifications-info" class="btn btn-outline"><i class="fa-solid fa-certificate"></i> Voir les Certificats</a>
         </div>
 
-        <!-- Décoration de transition courbe en bas en SVG pur -->
         <svg class="hero-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1130.5,120,1053.11,110.58,985.66,92.83Z"></path>
         </svg>
     </section>
 
-    <!-- SECTION À PROPOS -->
+    <! SECTION À PROPOS >
     <section id="a-propos" class="about">
         <div class="about-text">
             <span class="logo-text-sub" style="color: var(--secondary-color);">Qu'est-ce que le Gathering Place ?</span>
@@ -1578,18 +1814,18 @@
             <div class="pillars">
                 <div class="pillar-item">
                     <i class="fa-solid fa-award"></i>
-                    <h3>Diplôme Certifié</h3>
-                    <p>Une certification d'aptitude professionnelle validée en fin d'étude.</p>
+                    <h3>Certificat</h3>
+                    <p>Un certificat d'aptitude professionnelle validé en fin de formation.</p>
                 </div>
                 <div class="pillar-item">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <h3>+6 Métiers d'Avenir</h3>
-                    <p>6 parcours de formation intensive ciblés sur le marché d'Agoè et de Lomé.</p>
+                    <p>6 parcours de formation intensive ciblés sur le marché de Lomé.</p>
                 </div>
                 <div class="pillar-item">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
                     <h3>Zéro Frais Caché</h3>
-                    <p>L'inscription, les cours d'atelier, l'examen et la délivrance du diplôme sont 100% gratuits.</p>
+                    <p>L'inscription, les cours d'atelier et la délivrance du certificat sont 100% gratuits.</p>
                 </div>
                 <div class="pillar-item">
                     <i class="fa-solid fa-users"></i>
@@ -1602,7 +1838,6 @@
             <div class="about-img-frame">
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Jeunes adultes collaborant">
             </div>
-            <!-- Sceau d'authenticité CSS pur -->
             <div class="image-seal">
                 <i class="fa-solid fa-hands-holding-circle"></i>
                 Pieu d'Agoè
@@ -1610,15 +1845,15 @@
         </div>
     </section>
 
-    <!-- SECTION FORMATIONS (+6 PARCOURS CERTIFIANTS ET GRATUITS) -->
+    <! SECTION FORMATIONS >
     <section id="formations" class="formations">
         <span class="logo-text-sub" style="color: var(--secondary-color);">Construisez Votre Réussite</span>
         <h2 class="section-title">6 Parcours de Formation d'Avenir</h2>
-        <p>Chaque spécialité est validée par 6 mois d'ateliers intenses d'apprentissage pratique, suivis d'un examen d'aptitude. À la clé, l'obtention de votre diplôme certifié entièrement gratuit.</p>
+        <p>Cliquez sur n'importe quelle formation ci-dessous pour prévisualiser le certificat d'aptitude correspondant à votre nom !</p>
 
         <div class="grid-formations">
             
-            <!-- COIFFURE MODERNE -->
+            <! COIFFURE MODERNE >
             <div class="card">
                 <div class="card-img-container">
                     <img src="Coupe homme Waves.jpg" alt="Formation Coiffure Moderne">
@@ -1631,30 +1866,36 @@
                             <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
                             <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
                         </div>
-                        <a href="#contact" class="card-btn">S'inscrire</a>
+                        <div class="card-actions">
+                            <a href="#contact" class="card-btn">S'inscrire</a>
+                            <button onclick="openCertificate('Coiffure Moderne')" class="card-btn card-btn-cert"><i class="fa-solid fa-certificate"></i> Certificat</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TRESSAGE PROFESSIONNEL -->
+            <!- TRESSAGE >
             <div class="card">
                 <div class="card-img-container">
                     <img src="Tresse.jpg" alt="Tressage professionnel">
                 </div>
                 <div class="card-content">
-                    <h3>Tressage Pro</h3>
+                    <h3>Tressage </h3>
                     <div class="card-desc">
                         <p>Maîtrisez les nattes stylisées, tresses africaines complexes, coiffures d'apparat traditionnelles et la pose d'extensions.</p>
                         <div class="badge-container">
                             <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
                             <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
                         </div>
-                        <a href="#contact" class="card-btn">S'inscrire</a>
+                        <div class="card-actions">
+                            <a href="#contact" class="card-btn">S'inscrire</a>
+                            <button onclick="openCertificate('Tressage Professionnel')" class="card-btn card-btn-cert"><i class="fa-solid fa-certificate"></i> Certificat</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- HAUTE COUTURE -->
+            <! HAUTE COUTURE >
             <div class="card">
                 <div class="card-img-container">
                     <img src="Couture.jpg" alt="Stylisme et haute couture">
@@ -1667,12 +1908,15 @@
                             <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
                             <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
                         </div>
-                        <a href="#contact" class="card-btn">S'inscrire</a>
+                        <div class="card-actions">
+                            <a href="#contact" class="card-btn">S'inscrire</a>
+                            <button onclick="openCertificate('Haute Couture')" class="card-btn card-btn-cert"><i class="fa-solid fa-certificate"></i> Certificat</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- DÉVELOPPEMENT WEB -->
+            <! DÉVELOPPEMENT WEB >
             <div class="card">
                 <div class="card-img-container">
                     <img src="Just compute it_ 2025.jpg" alt="Développement Web">
@@ -1680,17 +1924,20 @@
                 <div class="card-content">
                     <h3>Développement Web</h3>
                     <div class="card-desc">
-                        <p>Concevez et déployez des sites internet interactifs. Apprenez le HTML, le CSS, le JavaScript et l'administration de CMS.</p>
+                        <p>Concevez et déployez des sites internet interactifs. Apprenez le HTML, le CSS, le JavaScript et pleins d'autres langages de programmation.</p>
                         <div class="badge-container">
                             <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
                             <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
                         </div>
-                        <a href="#contact" class="card-btn">S'inscrire</a>
+                        <div class="card-actions">
+                            <a href="#contact" class="card-btn">S'inscrire</a>
+                            <button onclick="openCertificate('Développement Web')" class="card-btn card-btn-cert"><i class="fa-solid fa-certificate"></i> Certificat</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CUISINE & PÂTISSERIE -->
+            <! CUISINE & PÂTISSERIE >
             <div class="card">
                 <div class="card-img-container">
                     <img src="Cuisine.jpg" alt="Cuisine et Pâtisserie">
@@ -1698,17 +1945,20 @@
                 <div class="card-content">
                     <h3>Cuisine & Pâtisserie</h3>
                     <div class="card-desc">
-                        <p>Ateliers de cuisine de prestige et de boulangerie-pâtisserie fine : gâteaux événementiels et plats d'affaires.</p>
+                        <p>Ateliers de cuisine et de pâtisserie fine : gâteaux et plats événementiels.</p>
                         <div class="badge-container">
                             <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
                             <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
                         </div>
-                        <a href="#contact" class="card-btn">S'inscrire</a>
+                        <div class="card-actions">
+                            <a href="#contact" class="card-btn">S'inscrire</a>
+                            <button onclick="openCertificate('Cuisine & Pâtisserie')" class="card-btn card-btn-cert"><i class="fa-solid fa-certificate"></i> Certificat</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- FERRAILLAGE DE CHANTIER -->
+            <! FERRAILLAGE >
             <div class="card">
                 <div class="card-img-container">
                     <img src="Ferraillage.jpg" alt="Ferraillage de Chantier">
@@ -1721,7 +1971,10 @@
                             <span class="badge"><i class="fa-regular fa-clock"></i> 6 Mois</span>
                             <span class="badge badge-gold"><i class="fa-solid fa-stamp"></i> Certifié Gratuit</span>
                         </div>
-                        <a href="#contact" class="card-btn">S'inscrire</a>
+                        <div class="card-actions">
+                            <a href="#contact" class="card-btn">S'inscrire</a>
+                            <button onclick="openCertificate('Ferraillage de Chantier')" class="card-btn card-btn-cert"><i class="fa-solid fa-certificate"></i> Certificat</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1729,39 +1982,66 @@
         </div>
     </section>
 
-    <!-- SECTION CERTIFICAT INTERACTIF -->
+    <! SECTION DE SELECTION DE CERTIFICAT INTERACTIF >
     <section id="certifications-info" class="cert-section">
         <span class="logo-text-sub" style="color: var(--secondary-color);">Preuve d'Excellence</span>
-        <h2 class="section-title">Votre Certificat de Compétences</h2>
-        <p>Afin de valoriser vos efforts, un diplôme officiel d'aptitude vous sera délivré lors de la réussite de votre évaluation finale. Cliquez sur les filières ci-dessous pour prévisualiser votre certificat en temps réel !</p>
+        <h2 class="section-title">Visualisez Votre Certificat</h2>
+        <p>Sélectionnez ci-dessous la formation de votre choix pour afficher immédiatement votre Certificat d'Aptitude personnalisé.</p>
 
-        <div class="cert-container">
+        <div class="cert-selector-group">
+            <span class="cert-selector-label"><i class="fa-solid fa-hand-pointer"></i> Choisissez une formation à afficher :</span>
+            <div class="cert-selector-buttons">
+                <button onclick="openCertificate('Coiffure Moderne')" class="btn-select-course">
+                    <i class="fa-solid fa-scissors"></i> Coiffure Moderne
+                </button>
+                <button onclick="openCertificate('Tressage Professionnel')" class="btn-select-course">
+                    <i class="fa-solid fa-user-ninja"></i> Tressage 
+                </button>
+                <button onclick="openCertificate('Haute Couture')" class="btn-select-course">
+                    <i class="fa-solid fa-shirt"></i> Haute Couture
+                </button>
+                <button onclick="openCertificate('Développement Web')" class="btn-select-course">
+                    <i class="fa-solid fa-code"></i> Développement Web
+                </button>
+                <button onclick="openCertificate('Cuisine & Pâtisserie')" class="btn-select-course">
+                    <i class="fa-solid fa-utensils"></i> Cuisine & Pâtisserie
+                </button>
+                <button onclick="openCertificate('Ferraillage de Chantier')" class="btn-select-course">
+                    <i class="fa-solid fa-helmet-safety"></i> Ferraillage
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <! FENÊTRE MODALE AFFICHANT LE CERTIFICAT >
+    <div id="certModal" class="cert-modal-overlay">
+        <div class="cert-modal-container">
             
-            <!-- Boutons radios cachés qui gèrent l'état d'affichage purement en CSS -->
-            <input type="radio" id="radio-coiffure" name="cert-course-radio" checked>
-            <input type="radio" id="radio-tresse" name="cert-course-radio">
-            <input type="radio" id="radio-couture" name="cert-course-radio">
-            <input type="radio" id="radio-web" name="cert-course-radio">
-            <input type="radio" id="radio-cuisine" name="cert-course-radio">
-            <input type="radio" id="radio-ferraillage" name="cert-course-radio">
-
-            <!-- Sélecteurs stylisés de filière -->
-            <div class="cert-selector-group">
-                <span class="cert-selector-label">Parcours Certifié à Afficher sur le diplôme :</span>
-                <div class="cert-selector-buttons">
-                    <label for="radio-coiffure" class="btn-select">Coiffure Moderne</label>
-                    <label for="radio-tresse" class="btn-select">Tressage Professionnel</label>
-                    <label for="radio-couture" class="btn-select">Haute Couture</label>
-                    <label for="radio-web" class="btn-select">Développement Web</label>
-                    <label for="radio-cuisine" class="btn-select">Cuisine & Pâtisserie</label>
-                    <label for="radio-ferraillage" class="btn-select">Ferraillage</label>
+            <! Barre de contrôle de la modale >
+            <div class="cert-modal-header">
+                <div class="cert-modal-title">
+                    <i class="fa-solid fa-award" style="color: var(--secondary-color);"></i> 
+                    Certificat Officiel d'Aptitude
+                </div>
+                <div class="cert-modal-controls">
+                    <button class="btn-modal-print" onclick="window.print()">
+                        <i class="fa-solid fa-print"></i> Imprimer / Télécharger
+                    </button>
+                    <button class="btn-modal-close" onclick="closeCertificate()">
+                        <i class="fa-solid fa-xmark"></i> Fermer
+                    </button>
                 </div>
             </div>
 
-            <!-- CADRE DU CERTIFICAT ACADÉMIQUE DE HAUTE QUALITÉ -->
+            <! Champ interactif permettant à l'utilisateur de taper son nom >
+            <div class="cert-input-box">
+                <label for="studentNameInput"><i class="fa-solid fa-pen"></i> Votre Nom Complet :</label>
+                <input type="text" id="studentNameInput" placeholder="Entrez votre nom et prénom ici..." value="Nom du Candidat" oninput="updateName(this.value)">
+            </div>
+
+            <! LE CERTIFICAT D'APTITUDE >
             <div class="diploma-frame">
                 
-                <!-- Filigrane d'icône centrale pour le prestige -->
                 <div class="diploma-watermark">
                     <i class="fa-solid fa-hands-holding-circle"></i>
                 </div>
@@ -1777,33 +2057,25 @@
 
                     <div class="diploma-body">
                         <h3>Certificat d'Aptitude</h3>
-                        <p class="diploma-text">Décerné d'office et à titre entièrement gracieux pour attester de la validation académique et pratique rigoureuse du cursus professionnel de 6 mois en :</p>
+                        <p class="diploma-text">Décerné d'office et à titre entièrement gracieux pour attester de la validation rigoureuse de la formation professionnelle de 6 mois en :</p>
                         
                         <div class="diploma-course-name">
-                            <span class="course-label label-coiffure">Coiffure Moderne</span>
-                            <span class="course-label label-tresse">Tressage Professionnel</span>
-                            <span class="course-label label-couture">Haute Couture</span>
-                            <span class="course-label label-web">Développement Web</span>
-                            <span class="course-label label-cuisine">Cuisine & Pâtisserie</span>
-                            <span class="course-label label-ferraillage">Ferraillage de Chantier</span>
+                            <span id="modalCourseTitle">Formation Sélectionnée</span>
                         </div>
 
-                        <span class="diploma-recipient">Nom du Candidat</span>
+                        <span id="modalRecipientName" class="diploma-recipient">Nom du Candidat</span>
                         
-                        <p class="diploma-validation">En reconnaissance de son assiduité, de sa réussite aux évaluations et examens techniques de fin de cycle, et de son engagement personnel pour l'autonomie.</p>
+                        <p class="diploma-validation">En reconnaissance de son assiduité, de sa réussite aux évaluations pratiques, et de son engagement personnel pour l'autonomie.</p>
                         
                         <span class="diploma-badge-free">Sceau d'Honneur • Certificat Officiel d'Aptitude</span>
                     </div>
 
                     <div class="diploma-footer">
-                        
-                        <!-- Informations de validation à gauche -->
                         <div class="diploma-sig" style="text-align: left; width: 180px;">
                             <span class="sig-title" style="margin-bottom: 5px;">Réf : GP-AGOE-2026</span>
                             <span class="sig-title" style="margin-bottom: 5px;">Statut : Homologué</span>
                         </div>
 
-                        <!-- Sceau de cire officiel de l'Église fait en CSS pur -->
                         <div class="wax-seal-container">
                             <div class="wax-seal-ribbon-left"></div>
                             <div class="wax-seal-ribbon-right"></div>
@@ -1812,13 +2084,11 @@
                             </div>
                         </div>
 
-                        <!-- Signature unique demandée du Président de Pieu -->
                         <div class="diploma-sig">
                             <span class="sig-image">Améhouénou Komlan Emmanuel</span>
                             <div class="sig-line"></div>
                             <span class="sig-title">Président du Pieu de Lomé Togo Agoè</span>
                         </div>
-
                     </div>
 
                 </div>
@@ -1826,9 +2096,9 @@
             </div>
 
         </div>
-    </section>
+    </div>
 
-    <!-- SECTION VALEURS -->
+    <! SECTION VALEURS >
     <section class="pourquoi">
         <div class="section-header">
             <span class="subtitle">Valeurs Sacrées</span>
@@ -1844,7 +2114,7 @@
             <div class="valeur-card">
                 <div class="valeur-num">02</div>
                 <h3>Gratuité Totale</h3>
-                <p>Du matériel de formation aux ateliers, jusqu'au diplôme final, l'Église prend l'intégralité des coûts à sa charge pour vous soutenir.</p>
+                <p>Du matériel de formation aux ateliers, jusqu'au certificat final, l'Église prend l'intégralité des coûts à sa charge pour vous soutenir.</p>
             </div>
             <div class="valeur-card">
                 <div class="valeur-num">03</div>
@@ -1854,7 +2124,7 @@
         </div>
     </section>
 
-    <!-- SECTION TEMOIGNAGES -->
+    <! SECTION TEMOIGNAGES >
     <section class="temoignages">
         <div class="section-header">
             <span class="subtitle">Des Vies Changées</span>
@@ -1876,18 +2146,18 @@
             </div>
             <div class="temoignage-card">
                 <span class="quote-icon">"</span>
-                <p>Grâce au tressage professionnel, j'ai ouvert un atelier à domicile. Je gère mes finances de manière autonome.</p>
+                <p>Grâce au tressage, j'ai ouvert un atelier à domicile. Je gère mes finances de manière autonome.</p>
                 <div class="temoignage-author">
                     <div class="author-avatar-placeholder">AM</div>
                     <div>
                         <h4>Akosua M.</h4>
-                        <span>Tressage Pro - 25 ans</span>
+                        <span>Tressage - 25 ans</span>
                     </div>
                 </div>
             </div>
             <div class="temoignage-card">
                 <span class="quote-icon">"</span>
-                <p>La pâtisserie a changé ma vie. Je vends des gâteaux pour les mariages de la paroisse et les environs.</p>
+                <p>La pâtisserie a changé ma vie. Je vends des gâteaux pour les mariages et anniversaires des environs.</p>
                 <div class="temoignage-author">
                     <div class="author-avatar-placeholder">EK</div>
                     <div>
@@ -1900,15 +2170,14 @@
 
         <div class="big-quote">
             <p>« Ce n'est pas simplement un cours technique. C'est un endroit béni où l'on grandit professionnellement et spirituellement. »</p>
-            <span>— Un Diplômé du Lieu de Rassemblement d'Agoè</span>
+            <span>— Un Certifié du Lieu de Rassemblement d'Agoè</span>
         </div>
     </section>
 
-    <!-- SECTION CONTACT ET CARTOGRAPHIE GOOGLE MAPS -->
+    <! SECTION CONTACT ET LOCALISATION >
     <section id="contact" class="contact-map-grid">
         <div class="contact-container-layout">
             
-            <!-- Colonne Informations de Contact -->
             <div class="contact-info-panel">
                 <span class="logo-text-sub" style="color: var(--secondary-color);">Nous Rejoindre</span>
                 <h2>Où nous trouver ?</h2>
@@ -1945,9 +2214,7 @@
                 </div>
             </div>
 
-            <!-- Colonne Google Maps Iframe -->
             <div class="map-frame-wrapper">
-                <!-- Intégration de la carte Google Maps pointant sur la rue 337 Kégué, en face de Boul icon -->
                 <iframe 
                     src="https://maps.google.com/maps?q=Rue%20337%20K%C3%A9gu%C3%A9%20Lom%C3%A9%20Togo%20Boulicon&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                     allowfullscreen="" 
@@ -1959,14 +2226,14 @@
         </div>
     </section>
 
-    <!-- SECTION APPEL À L'ACTION -->
+    <! SECTION APPEL À L'ACTION >
     <section class="cta-section">
         <h2>Prêt à changer de destin ?</h2>
         <p>Les places pour la prochaine promotion de 6 mois au Centre de Pieu d'Agoè sont limitées. Rejoignez-nous dès maintenant et assurez votre place gratuitement.</p>
         <a href="Login.html" class="btn btn-primary">S'inscrire Maintenant </a>
     </section>
 
-    <!-- PIED DE PAGE AVEC COORDONNÉES ET LIENS OFFICIELS -->
+    <! FOOTER >
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
@@ -1986,18 +2253,66 @@
             <div class="footer-col">
                 <h4>Liens Utiles</h4>
                 <ul>
-                    <li><a href="#accueil"><i class="fa-solid fa-angle-right"></i> Accueil du Portail</a></li>
+                    <li><a href="#accueil"><i class="fa-solid fa-angle-right"></i> Accueil </a></li>
                     <li><a href="#a-propos"><i class="fa-solid fa-angle-right"></i> À Propos du Programme</a></li>
-                    <li><a href="#formations"><i class="fa-solid fa-angle-right"></i> Nos 6 Formations</a></li>
+                    <li><a href="#formations"><i class="fa-solid fa-angle-right"></i> Nos Formations</a></li>
                     <li><a href="https://afriquedelouest.eglisedejesus-christ.org/gathering-place-initiative?lang=fra-afw" target="_blank"><i class="fa-solid fa-angle-right"></i> Site Global de l'Église</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="copyright">
-            <p>&copy; 2026 Pieu de Lomé Togo Agoè. Tous droits réservés. Diplômes d'aptitude délivrés gratuitement.</p>
+            <p>&copy; 2026 Pieu de Lomé Togo Agoè. Tous droits réservés. Certificats d'aptitude délivrés gratuitement.</p>
         </div>
     </footer>
+
+    <! JAVASCRIPT POUR GÉRER L'AFFICHAGE DU CERTIFICAT >
+    <script>
+        // Fonction pour ouvrir la modale avec la formation cliquée
+        function openCertificate(courseName) {
+            const modal = document.getElementById('certModal');
+            const courseTitleElement = document.getElementById('modalCourseTitle');
+            
+            // Mise à jour de la formation affichée sur le certificat
+            if (courseTitleElement) {
+                courseTitleElement.textContent = courseName;
+            }
+            
+            // Affichage de la modale avec animation
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        // Fonction pour fermer / réduire la modale du certificat
+        function closeCertificate() {
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Mettre à jour le nom en direct lors de la saisie
+        function updateName(newName) {
+            const recipientElement = document.getElementById('modalRecipientName');
+            if (recipientElement) {
+                recipientElement.textContent = newName.trim() !== '' ? newName : 'Nom du Candidat';
+            }
+        }
+
+        // Fermer la modale si on clique en dehors de la boîte
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('certModal');
+            if (event.target === modal) {
+                closeCertificate();
+            }
+        });
+
+        // Fermer la modale avec la touche Échap (Escape)
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeCertificate();
+            }
+        });
+    </script>
 
 </body>
 </html>
